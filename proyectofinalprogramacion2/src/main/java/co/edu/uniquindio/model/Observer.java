@@ -1,4 +1,4 @@
-package co.edu.uniquindo.pii.proyecto.cliente.model;
+package co.edu.uniquindio.model;
 
 public interface Observer {
     void update();
