@@ -4,6 +4,5 @@ public class PedidoCliente extends Pedido{
     private Cliente cliente;
     private Pedido pedido;
     
-    jajajjiji
 
 }
