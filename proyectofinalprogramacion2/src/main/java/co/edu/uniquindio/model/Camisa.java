@@ -1,16 +1,19 @@
 package co.edu.uniquindio.model;
 
-public class Camisa extends Producto implements Cloneable {
+public class Camisa extends Producto implements Cloneable, ProductoComp {
+    
     private Camisa(Builder builder) {
         this.talla = builder.talla;
         this.color = builder.color;
         this.precio = builder.precio;
+        this.descripcion = builder.descripcion;
     }
 
     public static class Builder {
         private String talla;
         private String color;
         private double precio;
+        private String descripcion;
 
         public Builder setTalla(String talla) {
             this.talla = talla;
@@ -24,6 +27,11 @@ public class Camisa extends Producto implements Cloneable {
 
         public Builder setPrecio(double precio) {
             this.precio = precio;
+            return this;
+        }
+        
+        public Builder setDescripcion(String descripcion){
+            this.descripcion = descripcion;
             return this;
         }
 
@@ -45,8 +53,15 @@ public class Camisa extends Producto implements Cloneable {
     public String toString() {
         return "Camisa [talla=" + talla + ", color=" + color + ", precio=" + precio + "]";
     }
+    
+    @Override
+    public void mostrarDetalles() {
+        System.out.println("Producto: " + descripcion + " | Precio: " + precio);
+    }
 
-    public void setPrecio(int i) {
-        
+    @Override
+    public String getDescripcion() {
+        return descripcion;
     }
 }
+
